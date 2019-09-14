@@ -16,6 +16,7 @@ def begin():
     
     txt1.grid(row = 1, columnspan = 10)
 
+      # Numbers
     btn0 = Button(root, text = "0", command = _btn0).grid(row = 6, column = 5)
     btn1 = Button(root, text = "1", command = _btn1).grid(row = 5, column = 4)
     btn2 = Button(root, text = "2", command = _btn2).grid(row = 5, column = 5)
@@ -27,6 +28,7 @@ def begin():
     btn8 = Button(root, text = "8", command = _btn8).grid(row = 3, column = 5)
     btn9 = Button(root, text = "9", command = _btn9).grid(row = 3, column = 6)
 
+      # Operators
     btnplus = Button(root, text = "+", command = _btnplus).grid(row = 3, column = 7)
     btnminus = Button(root, text = "-", command = _btnminus).grid(row = 4, column = 7)
     btnmult = Button(root, text = "*", command = _btnmult).grid(row = 5, column = 7)
@@ -35,9 +37,15 @@ def begin():
     btnparr = Button(root, text = ")", command = _btnparr).grid(row = 6, column = 6)  # Parenthesis right
     btnpwr = Button(root, text = "^", command = _btnpwr).grid(row = 7, column = 7)
 
-    btnequals = Button(root, text = "=", command = count).grid(row = 7, column = 5)
-    btndel = Button(root, text = "DELETE", command = _btndel).grid(row = 7, column = 4)
-    btnclr = Button(root, text = "CLEAR", command = _btnclr).grid(row = 7, column = 6)
+      # Meta
+    btnequals = Button(root, text = "=", command = count).grid(row = 8, column = 5)
+    btndel = Button(root, text = "DELETE", command = _btndel).grid(row = 8, column = 4)
+    btnclr = Button(root, text = "CLEAR", command = _btnclr).grid(row = 8, column = 6)
+
+      # Constants
+    btnpi = Button(root, text = "π", command = _btnpi).grid(row = 7, column = 4)
+    btne = Button(root, text = "e", command = _btne).grid(row = 7, column = 5)
+    btnphi = Button(root, text = "Φ", command = _btnphi).grid(row = 7, column = 6)
 
 def main():
     txt1.configure(state='normal')
@@ -106,12 +114,21 @@ def _btnclr():
     global counter
     counter = []
     main()
+def _btnpi():
+    counter.append("3.1415926535")
+    main()
+def _btne():
+    counter.append("2.7182818284")
+    main()
+def _btnphi():
+    counter.append("1.6180339887")
+    main()
 
 def count():
     global counter
     counter = ''.join(str(e) for e in counter)
     try:
-        result = eval(counter)  # Evaluates = pythoncodesit
+        result = eval(counter)  # Evaluates = runs it like it were python code.
         counter = list(counter)
         counter.append("=")
         counter.append(str(result))
@@ -119,12 +136,11 @@ def count():
     except:
         counter = list(counter)
         counter.append("ERROR")
-        print("ERROR")
         main()
 
 root = Tk()
 root.geometry("304x300")
-root.title("Calculat0r v.0.1")
+root.title("Calculat0r v.0.2")
 btn1 = Button(root, text = "Start calculating", command = begin)
 btn1.pack()
 root.mainloop()

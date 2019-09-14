@@ -5,7 +5,7 @@ Info about the individual projects below.
 
 #### Image Of The Day (IOTD):
 Presents an new image every day from the `image` folder. Use the folder already created or edit the source code and make your own!
-The program supports most filetypes and a practically infinite amount of images.
+The program supports most filetypes and a practically infinite amount of images. Images not in the 16:9 aspect ratio will be stretched or squished.
 
 To add more images: copy the images you want to add into the `image` folder.
 
