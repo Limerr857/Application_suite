@@ -256,7 +256,7 @@ def encrypt31():
     global key
     txt2 = Text(window, height = textheight)  
     btn4 = Button(window, text = "Use key", command = encrypt33)
-    lbl2 = Label(window, text = 'Write the key you want to use, the larger the key the better the encryption.\nYou will need to securely send this key to your recipient.')
+    lbl2 = Label(window, text = 'Write the key you want to use, the larger the key the better the encryption.\nYou will need to securely send this key to your recipient.\nUse numbers ONLY.')
     lbl2.pack(side = TOP)
     btn4.pack(side = BOTTOM)
     txt2.pack()
@@ -365,7 +365,7 @@ def encrypt41():
     global key
     txt2 = Text(window, height = textheight)  
     btn4 = Button(window, text = "Use key", command = encrypt44)
-    lbl2 = Label(window, text = 'Write the key you want to use, the larger the key the better the encryption.\nYou will need to securely send this key to your recipient.')
+    lbl2 = Label(window, text = 'Write the key you want to use, the larger the key the better the encryption.\nYou will need to securely send this key to your recipient.\nUse numbers ONLY.')
     lbl2.pack(side = TOP)
     btn4.pack(side = BOTTOM)
     txt2.pack()
@@ -482,7 +482,7 @@ def decrypt44():
 global window
 window = Tk()
 window.geometry("550x300")
-window.title("Encrypt0r V.1.1")
+window.title("Encrypt0r V.1.2")
 btn1 = Button(window, text = "Start Encrypt0r", command = strt)
 btn1.pack()
 window.mainloop()
