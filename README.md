@@ -18,6 +18,8 @@ Level 1, 2 and 3 uses basically the same method, only with slightly different de
 
 ## Installation
 To install simply download and uncompress the .zip file. After that, open `Application_suite.exe`.
-
+If you want to update there are two options:
+1. Delete the old files and reinstall everything.
+2. Delete the .exe file and the .py files and reinstall those. (Might not always work,)
 
 If you find ways of improving my applications, please leave an issue on my github.
