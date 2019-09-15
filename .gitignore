@@ -3,3 +3,7 @@
 ################################################################################
 
 /build/Application_suite
+/.vs
+/__pycache__
+/Application_suite.spec
+/Application suite.pyproj.user
