@@ -367,7 +367,7 @@ def encrypt41():
     global key
     txt2 = Text(window, height = textheight)  
     btn4 = Button(window, text = "Use key", command = encrypt44)
-    lbl2 = Label(window, text = 'Write the key you want to use, the larger the key the better the encryption.\nYou will need to securely send this key to your recipient.\nUse numbers ONLY.')
+    lbl2 = Label(window, text = 'Write the key you want to use, the larger the key the better the encryption.\nYou will need to securely send this key to your recipient.\nYou can use both numbers, letters and special characters.')
     lbl2.pack(side = TOP)
     btn4.pack(side = BOTTOM)
     txt2.pack()
@@ -377,13 +377,24 @@ def encrypt44():
     key = txt2.get("1.0",'end-1c')  # Gets everything from the inputted text
     for widget in window.winfo_children():
         widget.destroy()
+    try:
+        key = int(key)
+    except:
+        key = list(key)
+        x = 0
+        global notalphabet
+        for i in key:
+            temp1 = notalphabet.find(i)
+            key[x] = temp1
+            x += 1
+        key = '+'.join(str(e) for e in key)
+        key = eval(key)
     global temp2
     temp2 = str.lower(temp2)
     msglen = len(temp2)
     message = list(temp2)
     x = 4
     days = round(time.time() / 86400)
-    key = int(key)
     random.seed(key + days)
     temp4 = random.randint(10 ** ((msglen) * 6), 10 ** ((msglen + 1) * 6) - 1)
     temp6 = [int(x) for x in str(temp4)]
@@ -396,7 +407,6 @@ def encrypt44():
     temp6 = temp6.split(",")
     x = 0
     temp6 = list(map(int, temp6))
-    global notalphabet
     notalphabet = str(notalphabet)
     for i in message:
         i = notalphabet.find(i)
@@ -424,7 +434,7 @@ def decrypt4():  # Fourth most insecure, this time a key is used to generate a r
     global txt2
     txt2 = Text(window, height = textheight)  
     btn4 = Button(window, text = "Decrypt", command = decrypt41)
-    lbl2 = Label(window, text = 'Write the message you want to encrypt and press "Decrypt"')
+    lbl2 = Label(window, text = 'Write the message you want to decrypt and press "Decrypt"')
     lbl2.pack(side = TOP)
     btn4.pack(side = BOTTOM)
     txt2.pack()
@@ -449,11 +459,22 @@ def decrypt44():
     key = txt2.get("1.0",'end-1c')  # Gets everything from the inputted text
     for widget in window.winfo_children():
         widget.destroy()
+    try:
+        key = int(key)
+    except:
+        key = list(key)
+        x = 0
+        global notalphabet
+        for i in key:
+            temp1 = notalphabet.find(i)
+            key[x] = temp1
+            x += 1
+        key = '+'.join(str(e) for e in key)
+        key = eval(key)
     message = temp2.split()
     msglen = len(message)
     x = 4
     days = round(time.time() / 86400)
-    key = int(key)
     random.seed(key + days)
     temp4 = random.randint(10 ** ((msglen) * 6), 10 ** ((msglen + 1) * 6) - 1)
     temp6 = [int(x) for x in str(temp4)] 
@@ -473,7 +494,6 @@ def decrypt44():
         i -= temp6[x]
         #
         i = int(i)
-        global notalphabet
         notalphabet = list(notalphabet)
         i = notalphabet[i]
         message[x] = i
@@ -492,7 +512,7 @@ def decrypt44():
 
 global window
 window = Tk()
-window.geometry("650x300")
+window.geometry("700x400")
 window.title("Encrypt0r")
 btn1 = Button(window, text = "Start Encrypt0r", command = strt)
 btn1.pack()

@@ -16,10 +16,16 @@ A simple calculator app. Mainly built as traing for more advanced stuff in the f
 Encrypts messages using very simple methods, not really reliable scince you can brute-force your way trough most of it. Basically, do not use for anything other than fun.
 Level 1, 2 and 3 uses basically the same method, only with slightly different degrees of security. Level 4 is different, but can still be brute-forced. New codes are generated every day for level 4, so do not wait too long to send your message!
 
+To use:
+1. Choose a security level, I recommend level 4.
+2. Write or paste your message into the box, most characters are supported.
+3. Write the key you want to use. The key can include all characters you can use to type a message in. You will need to send this key securely to your recipient.
+4. Press "Encrypt" and copy the message that is presented. You might need to use the scrollbar.
+5. When you get the encrypted message, follow the same steps as above.
 ## Installation
 To install simply download and uncompress the .zip file. After that, open `Application_suite.exe`.
 If you want to update there are two options:
-1. Delete the old files and reinstall everything.
-2. Delete the .exe file and the .py files and reinstall those. (Might not always work,)
+- Delete the old files and reinstall everything.
+- Delete the .exe file and the .py files and reinstall those. (Might not always work,)
 
 If you find ways of improving my applications, please leave an issue on my github.
