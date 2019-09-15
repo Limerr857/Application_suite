@@ -140,7 +140,7 @@ def count():
 
 root = Tk()
 root.geometry("304x300")
-root.title("Calculat0r v.0.2")
+root.title("Calculat0r")
 btn1 = Button(root, text = "Start calculating", command = begin)
 btn1.pack()
 root.mainloop()

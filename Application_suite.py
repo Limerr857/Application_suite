@@ -29,7 +29,7 @@ def IOTD():
 
 root = Tk()
 root.geometry("550x300")
-root.title("GE:APPS v.0.3")
+root.title("GE:APPS v.0.4")
 btn1 = Button(root, text = "Start browsing", command = begin)
 btn1.pack()
 root.mainloop()

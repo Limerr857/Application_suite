@@ -38,7 +38,7 @@ def begin():
 
 root = Toplevel()
 root.geometry("550x300")
-root.title("Image Of The Day v.0.1")
+root.title("Image Of The Day")
 btn1 = Button(root, text = "Get me the image of the day!", command = begin)
 btn1.pack()
 lbl1 = Label(root, text = 'Displays an random image from the folder "images" inside of the same folder as the .exe. \nSupports most file formats, images with a 16:9 aspect ratio works best.')
