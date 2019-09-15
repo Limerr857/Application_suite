@@ -2,6 +2,7 @@
 from tkinter import *
 from tkinter.ttk import *
 import random
+import time
 
 alphabet = """abcdefghijklmnopqrstuvwxyzåäö .,/_-+=():'*?!1234567890&$€#@^~;
 """  # Used for first level of encryption
@@ -380,7 +381,8 @@ def encrypt44():
     msglen = len(temp2)
     message = list(temp2)
     x = 4
-    random.seed(key)
+    days = round(time.time() / 86400)
+    random.seed(key * days)
     temp4 = random.randint(10 ** ((msglen) * 5), 10 ** ((msglen + 1) * 5) - 1)
     temp6 = [int(x) for x in str(temp4)]
     y = 0
@@ -445,7 +447,8 @@ def decrypt44():
     message = temp2.split()
     msglen = len(message)
     x = 4
-    random.seed(key)
+    days = round(time.time() / 86400)
+    random.seed(key * days)
     temp4 = random.randint(10 ** ((msglen) * 5), 10 ** ((msglen + 1) * 5) - 1)
     temp6 = [int(x) for x in str(temp4)] 
     y = 0
