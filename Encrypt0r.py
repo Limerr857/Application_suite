@@ -7,6 +7,7 @@ import time
 alphabet = """abcdefghijklmnopqrstuvwxyzåäö .,/_-+=():'*?!1234567890&$€#@^~;
 """  # Used for first level of encryption
 alen = str.__len__(alphabet)  # Gets the length of this ^, used for easy adding of new characters
+global notalphabet
 notalphabet = """c!tp#eaw_m)ov*d5+.? j/
 z3@flä$nrhqök&4u^0(6=8bisy71-g,2~;':9å€x"""  # Used for second, third and fourth level of encryption, shuffled
 textheight = 8
@@ -382,11 +383,12 @@ def encrypt44():
     message = list(temp2)
     x = 4
     days = round(time.time() / 86400)
-    random.seed(key * days)
-    temp4 = random.randint(10 ** ((msglen) * 5), 10 ** ((msglen + 1) * 5) - 1)
+    key = int(key)
+    random.seed(key + days)
+    temp4 = random.randint(10 ** ((msglen) * 6), 10 ** ((msglen + 1) * 6) - 1)
     temp6 = [int(x) for x in str(temp4)]
     y = 0
-    while y < msglen:
+    while y < msglen * 1.2:
         temp6[x] = ","
         y += 1
         x += 5
@@ -394,6 +396,8 @@ def encrypt44():
     temp6 = temp6.split(",")
     x = 0
     temp6 = list(map(int, temp6))
+    global notalphabet
+    notalphabet = str(notalphabet)
     for i in message:
         i = notalphabet.find(i)
         # The core of the calculation
@@ -406,11 +410,12 @@ def encrypt44():
     txt2.insert(1.0, message)
     lbl5 = Label(window, text = "Here is your encrypted message:")
     btn7 = Button(window, text = "Restart Encrypt0r", command = strt)
-    lbl5.pack(side = TOP)
-    txt2.pack()
-    btn7.pack(side = BOTTOM)
-    txt2.configure(bg=window.cget('bg'), relief=FLAT)  # These two might be useless, but I can't be bothered to check
-    txt2.configure(state="disabled") 
+    scr1 = Scrollbar(window, command=txt2.yview)
+    txt2['yscrollcommand'] = scr1.set
+    scr1.grid(row = 2, column = 1, sticky="ns")
+    lbl5.grid(row = 1)
+    txt2.grid(row = 2)
+    btn7.grid(row = 3)
 
 
 def decrypt4():  # Fourth most insecure, this time a key is used to generate a random sequence to raise the numbers by.
@@ -448,11 +453,12 @@ def decrypt44():
     msglen = len(message)
     x = 4
     days = round(time.time() / 86400)
-    random.seed(key * days)
-    temp4 = random.randint(10 ** ((msglen) * 5), 10 ** ((msglen + 1) * 5) - 1)
+    key = int(key)
+    random.seed(key + days)
+    temp4 = random.randint(10 ** ((msglen) * 6), 10 ** ((msglen + 1) * 6) - 1)
     temp6 = [int(x) for x in str(temp4)] 
     y = 0
-    while y < msglen:
+    while y < msglen * 1.2:
         temp6[x] = ","
         y += 1
         x += 5
@@ -467,6 +473,8 @@ def decrypt44():
         i -= temp6[x]
         #
         i = int(i)
+        global notalphabet
+        notalphabet = list(notalphabet)
         i = notalphabet[i]
         message[x] = i
         x += 1
@@ -484,8 +492,8 @@ def decrypt44():
 
 global window
 window = Tk()
-window.geometry("550x300")
-window.title("Encrypt0r V.1.2")
+window.geometry("650x300")
+window.title("Encrypt0r")
 btn1 = Button(window, text = "Start Encrypt0r", command = strt)
 btn1.pack()
 window.mainloop()
