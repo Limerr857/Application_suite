@@ -24,8 +24,8 @@ To use:
 5. When you get the encrypted message, follow the same steps as above.
 ## Installation
 To install simply download and uncompress the .zip file. After that, open `Application_suite.exe`.
-If you want to update there are two options:
+Updating:
 - Delete the old files and reinstall everything.
-- Delete the .exe file and the .py files and reinstall those. (Might not always work,)
+- Done (something better may be developed in the future)
 
 If you find ways of improving my applications, please leave an issue on my github.
