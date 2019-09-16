@@ -4,3 +4,4 @@
 /__pycache__
 /Application_suite.spec
 /Application suite.pyproj.user
+.vscode/launch.json

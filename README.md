@@ -22,6 +22,14 @@ To use:
 3. Write the key you want to use. The key can include all characters you can use to type a message in. You will need to send this key securely to your recipient.
 4. Press "Encrypt" and copy the message that is presented. You might need to use the scrollbar.
 5. When you get the encrypted message, follow the same steps as above.
+
+#### Gambler:
+Gamble away all your shmeckles(ingame currency) with this fantastic applet. More modes will be added soon.
+
+Guesser: Guess the number! You fail, you lose. but there are some tasry prices if you win!
+Waster: Have too many shmeckles? Using waster you can throw them all away, ten shmeckles at the time!
+Bank: Have too few shmeckles? Now you can borrow some more at the bank! Don't worry about the massive depts you are collecting, i'm sure it will be fine!
+
 ## Installation
 To install simply download and uncompress the .zip file. After that, open `Application_suite.exe`.
 Updating:

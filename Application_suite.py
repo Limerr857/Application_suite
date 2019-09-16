@@ -17,6 +17,7 @@ def begin():
     btn1 = Button(root, text = "Encrypt0r", command = Encrypt0r).pack(fill=X)
     btn2 = Button(root, text = "Calculat0r", command = Calculat0r).pack(fill=X)
     btn3 = Button(root, text = "Image Of The Day", command = IOTD).pack(fill=X)
+    btn4 = Button(root, text = "Gambler", command = Gambler).pack(fill=X)
 
 def Encrypt0r():
     exec(open("Encrypt0r.py", encoding="utf-8").read(), globals())
@@ -26,6 +27,9 @@ def Calculat0r():
 
 def IOTD():
     exec(open("IOTD.py", encoding="utf-8").read(),globals())
+
+def Gambler():
+    exec(open("Gambler.py", encoding="utf-8").read(),globals())
 
 root = Tk()
 root.geometry("550x300")
