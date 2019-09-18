@@ -7,16 +7,21 @@ import random
 global money
 money = 100
 global dept
-dept = random.randint(0, 1000000)
+dept = random.randint(0, 100)
+global money_wasted
+money_wasted = 0
+global btn3_destroyed
+btn3_destroyed = False
 
 def begin():
     for widget in root.winfo_children():
         widget.destroy()
     lbl1 = Label(root, text = "So, how do you want to waste your money today?").pack(side = TOP)
     lbl2 = Label(root, text = "You have {} shmeckles.".format(money)).pack(side = TOP)
+    # Maybe scrap this idea for now? it was hard to program
     #btn1 = Button(root, text = "Wheel of fortune!", command = Wheel).pack(fill=X)
     btn2 = Button(root, text = "Guesser", command = Guesser).pack(fill=X)
-    #btn3 = Button(root, text = "Boring", command = IOTD).pack(fill=X)
+    btn3 = Button(root, text = "Boring", command = Boring).pack(fill=X)
     btn4 = Button(root, text = "Waster", command = Waster).pack(fill=X)
     btn5 = Button(root, text = "Bank", command = Bank).pack(fill=X)
 
@@ -159,18 +164,69 @@ def Waster():
       # I actually have an iq of 1034 simply because i watch rick and morty.
       # Make a simple story appear when you waste enough money, sortof like Candy box?
     lbl1 = Label(root, text = "You have {} shmeckles.".format(money)).pack()
-    btn1 = Button(root, text = "Throw 10 shmeckles in the trash.", command = Waster2).pack()
+    lbl0 = Label(root, text = "You wasted {} shmeckles.".format(money_wasted)).pack()
+    btn1 = Button(root, text = "Throw 10 shmeckles in the trash.", command = Waster2)
+    btn1.pack()
     btn0 = Button(root, text = "Go back", command = begin).pack(side = BOTTOM)
+    if money_wasted > 100:
+        btn2 = Button(root, text = "Throw 100 shmeckles in the trash.", command = Waster3)
+        btn2.pack()
+    if money_wasted > 1000:
+        lbl2 = Label(root, text = "Okay, this is getting ridiculus.")
+        lbl2.pack()
+    if money_wasted > 2000:
+        lbl2.destroy()
+        lbl3 = Label(root, text = "Could you just stop throwing shmeckles into a bin?")
+        lbl3.pack()
+        global btn3_destroyed
+    if money_wasted > 4000 and btn3_destroyed == False:
+        lbl3.destroy()
+        lbl4 = Label(root, text = "How about this huh? I'm just going to remove the buttons.")
+        btn1.destroy()
+        btn2.destroy()
+        btn3_destroyed = True
+        lbl4.pack()
+    if money_wasted > 4500 and btn3_destroyed == True:
+        lbl3.destroy()
+        lbl5 = Label(root, text = "Wait, what? Thats not how that works!")
+        lbl5.pack()
+    if money_wasted > 6000:
+        lbl5.destroy()
+        lbl6 = Label(root, text = "Okay, you know what. I'm just going to ignore you.")
+        lbl6.pack()
+    if money_wasted > 10000:
+        lbl6.destroy()
+        lbl7 = Label(root, text = "Wow, congratulations. You win absulutely nothing.")
+        lbl7.pack()
+    if money_wasted > 100000:
+        lbl7.destroy()
+        lbl8 = Label(root, text = "Who used an autoclicker? You did!")
+        lbl8.pack()
+    if money_wasted > 1000000:
+        lbl7.destroy()
+        lbl8 = Label(root, text = "You should really be spending your time with more productive things than reading through code/clicking your mouse into smithoreens.")
+        lbl8.pack()
+
+
 def Waster2():
     global money
+    global money_wasted
     if money - 10 >= 0:
         money -= 10
+        money_wasted += 10
     Waster()
+def Waster3():
+    global money
+    global money_wasted
+    if money - 10 >= 0:
+        money -= 100
+        money_wasted += 100
+    Waster()
+
 
 def Bank():
     for widget in root.winfo_children():
         widget.destroy()
-      # Implement better dept system
     global money
     global dept
     lbl1 = Label(root, text = "How much money do you want to borrow?").pack(side=TOP)
@@ -184,20 +240,32 @@ def bank100():
     global money
     global dept
     money += 100
-    dept += 100
+    dept += round((dept/100) + 100)
     Bank()
 def bank10000():
     global money
     global dept
     money += 10000
-    dept += 100000
+    dept += round((dept/100) + 10000)
     Bank()
 def bank1000000():
     global money
     global dept
     money += 1000000
-    dept += 10000000
+    dept += round((dept/100) + 1000000)
     Bank()
+
+def Boring():
+    for widget in root.winfo_children():
+        widget.destroy()
+    btn1 = Button(root, text = "Gamble", command = Boring2).pack()
+    lbl1 = Label(root, text = "Shmeckles: {}".format(money)).pack(side = TOP)
+    btn0 = Button(root, text = "Go back", command = begin).pack(side = BOTTOM)
+def Boring2():
+    global money
+    money += 10
+    money -= 11
+    Boring()
 
 root = Toplevel()
 root.geometry("400x300")
