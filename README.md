@@ -24,7 +24,7 @@ To use:
 5. When you get the encrypted message, follow the same steps as above.
 
 #### Gambler:
-Gamble away all your shmeckles(inapp currency) with this fantastic applet. More modes will be added soon.
+Gamble away all your shmeckles (inapp currency) with this fantastic applet. More modes will be added soon.
 
 Guesser: Guess the number! If you fail, you lose. but there are some tasty prices if you win!   
 
