@@ -31,6 +31,10 @@ def IOTD():
 def Gambler():
     exec(open("Gambler.py", encoding="utf-8").read(),globals())
 
+def NameGenerator():
+    exec(open("NameGenerator.py", encoding="utf-8").read(),globals())
+
+
 root = Tk()
 root.geometry("550x300")
 root.title("GE:APPS v.0.4")

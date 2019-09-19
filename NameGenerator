@@ -1,0 +1,37 @@
+from tkinter import *
+from tkinter.ttk import *
+import random
+
+def begin():
+    for widget in root.winfo_children():
+            widget.destroy()
+        lbl1 = Label(root, text = "What sort of names do you want to generate?").pack(side = TOP)
+        btn2 = Button(root, text = "Company names", command = Company).pack(fill=X)
+        #btn3 = Button(root, text = "Human names", command = Boring).pack(fill=X)
+        btn4 = Button(root, text = "Robot names", command = Robot).pack(fill=X)
+        #btn5 = Button(root, text = "Country names", command = Bank).pack(fill=X)
+
+def Robot():
+    # TODO: Add more names
+    listA = ["United", "Wholesome", "Micro", "Giant"]
+    listB = ["Foods", "Industries", "Engineering", "Technology"]
+    listC = ["Ltd.", "Corp.", "Inc.", ""]
+
+    listAlen = len(listA)
+    listBlen = len(listB)
+    listClen = len(listC)
+
+    tempA = listA[random.randint(0, listAlen)]
+    tempB = listB[random.randint(0, listBlen)]
+    tempC = listC[random.randint(0, listClen)]
+
+    temp = tempA + tempB + tempC
+    print(temp)
+
+
+root = Toplevel()
+root.geometry("400x300")
+root.title("NameGenerator")
+btn1 = Button(root, text = "Generate me some names!", command = begin)
+btn1.pack()
+root.mainloop()
