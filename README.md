@@ -24,11 +24,15 @@ To use:
 5. When you get the encrypted message, follow the same steps as above.
 
 #### Gambler:
-Gamble away all your shmeckles(ingame currency) with this fantastic applet. More modes will be added soon.
+Gamble away all your shmeckles (inapp currency) with this fantastic applet. More modes will be added soon.
 
-Guesser: Guess the number! You fail, you lose. but there are some tasry prices if you win!
-Waster: Have too many shmeckles? Using waster you can throw them all away, ten shmeckles at the time!
-Bank: Have too few shmeckles? Now you can borrow some more at the bank! Don't worry about the massive depts you are collecting, i'm sure it will be fine!
+Guesser: Guess the number! If you fail, you lose. but there are some tasty prices if you win!   
+
+Waster: Have too many shmeckles? Using waster you can throw them all away, ten shmeckles at the time!   
+
+Bank: Have too few shmeckles? Now you can borrow some more at the bank! Don't worry about the massive depts you are collecting, i'm sure it will be fine!   
+
+Boring: Yeah, this one's pretty boring.
 
 ## Installation
 To install simply download and uncompress the .zip file. After that, open `Application_suite.exe`.
