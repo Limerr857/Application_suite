@@ -34,6 +34,11 @@ Bank: Have too few shmeckles? Now you can borrow some more at the bank! Don't wo
 
 Boring: Yeah, this one's pretty boring.
 
+#### NameGenerator:
+Generates som epretty good names for you! This one doesn't need much of an explanation, but here are the different types of names you can generate:
+
+Company names.
+
 ## Installation
 To install simply download and uncompress the .zip file. After that, open `Application_suite.exe`.
 Updating:
