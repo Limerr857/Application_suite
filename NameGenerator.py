@@ -16,7 +16,7 @@ def begin():
     btn2 = Button(root, text = "Company names", command = Company).pack(fill=X)
     #btn3 = Button(root, text = "Human names", command = Boring).pack(fill=X)
     btn4 = Button(root, text = "Robot names", command = Robot).pack(fill=X)
-    #btn5 = Button(root, text = "Country names", command = Bank).pack(fill=X)
+    btn5 = Button(root, text = "Country names", command = Country).pack(fill=X)
 
 
 def Company():
@@ -27,7 +27,7 @@ def Company():
     txt1 = Text(root, height = 10, wrap = WORD)
     txt1.insert(1.0, temp2)
     txt1.pack()
-    txt1.configure(bg=root.cget('bg'), relief=FLAT)  # These two might be useless, but I can't be bothered to check
+    txt1.configure(bg=root.cget('bg'), relief=FLAT) 
     btn0 = Button(root, text = "Go back", command = begin).pack(side = BOTTOM)
 def Companycalc():
     # TODO: Add more names
@@ -73,7 +73,7 @@ def Robot():
     txt1 = Text(root, height = 10, wrap = WORD)
     txt1.insert(1.0, temp2)
     txt1.pack()
-    txt1.configure(bg=root.cget('bg'), relief=FLAT)  # These two might be useless, but I can't be bothered to check
+    txt1.configure(bg=root.cget('bg'), relief=FLAT) 
     btn0 = Button(root, text = "Go back", command = begin).pack(side = BOTTOM)
 def Robot1():
     global temp2
@@ -124,6 +124,56 @@ def Robotcalc():
         temp2.append(temp)
     temp2 = "\n".join(temp2)
     Robot()
+
+
+def Country():
+    for widget in root.winfo_children():
+        widget.destroy()
+    btn1 = Button(root, text = "Generate!", command = Country1).pack()
+    btn2 = Button(root, text = "Generate 10!", command = Country2).pack()
+    txt1 = Text(root, height = 10, wrap = WORD)
+    txt1.insert(1.0, temp2)
+    txt1.pack()
+    txt1.configure(bg=root.cget('bg'), relief=FLAT)  
+    btn0 = Button(root, text = "Go back", command = begin).pack(side = BOTTOM)
+def Country1():
+    global temp2
+    temp2 = []
+    global times
+    times = 1
+    Countrycalc()
+def Country2():
+    global temp2
+    temp2 = []
+    global times
+    times = 10
+    Countrycalc()
+def Countrycalc():
+    # TODO: Add more names
+    # Setup
+            # If you add more names into listA, put a space infront for asthetics
+    listA = [" Great", " United States of", " Monumental", " Allmighty", "", "" , "", "", "", "", "", "", "", "", "", "", "", ""]
+    listB = ["Cu", "So", "Swe", "Ethi", "Sau", "Chi", "Indi", "Eng", "Nor", "Bri"]
+    listC = ["n", "b", "mali", "ad", "co", "way", "t", "", ""]
+    listD = ["annia", "land", "a", "ain", ""]
+
+    listAlen = len(listA)
+    listBlen = len(listB)
+    listClen = len(listC)
+    listDlen = len(listD)
+    for i in range(times):
+        # Generation
+        tempA = listA[random.randint(0, listAlen-1)]
+        tempB = listB[random.randint(0, listBlen-1)]
+        tempC = listC[random.randint(0, listClen-1)]
+        tempD = listD[random.randint(0, listDlen-1)]
+
+        temp = tempA + " " + tempB + tempC + tempD
+        global temp2
+        temp2.append(temp)
+    temp2 = "\n".join(temp2)
+    Country()
+
 
 root = Toplevel()
 root.geometry("400x300")
