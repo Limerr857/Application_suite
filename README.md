@@ -24,7 +24,7 @@ To use:
 5. When you get the encrypted message, follow the same steps as above.
 
 #### Gambler:
-Gamble away all your shmeckles (inapp currency) with this fantastic applet. More modes will be added soon.
+Gamble away all your shmeckles (in app currency) with this fantastic applet. More modes will be added soon.
 
 Guesser: Guess the number! If you fail, you lose. but there are some tasty prices if you win!   
 
@@ -37,12 +37,10 @@ Boring: Yeah, this one's pretty boring.
 #### NameGenerator:
 Generates som epretty good names for you! This one doesn't need much of an explanation, but here are the different types of names you can generate:
 
-Company names.
+Company names, Robot names, Human names, Country names.
 
 ## Installation
 To install simply download and uncompress the .zip file. After that, open `Application_suite.exe`.
-Updating:
-- Delete the old files and reinstall everything.
-- Done (something better may be developed in the future)
+For updating simply delete all the old files and reinstall. A better system may be developed in the future.
 
 If you find ways of improving my applications, please leave an issue on my github.
