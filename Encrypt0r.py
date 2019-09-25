@@ -5,11 +5,11 @@ import random
 import time
 
 alphabet = """abcdefghijklmnopqrstuvwxyzåäö .,/_-+=():'*?!1234567890&$€#@^~;
-"""  # Used for first level of encryption
+	"""  # Used for first level of encryption
 alen = str.__len__(alphabet)  # Gets the length of this ^, used for easy adding of new characters
 global notalphabet
 notalphabet = """c!tp#eaw_m)ov*d5+.? j/
-z3@flä$nrhqök&4u^0(6=8bisy71-g,2~;':9å€x"""  # Used for second, third and fourth level of encryption, shuffled
+z3@flä$nrhqök&4u^0(6=8bisy71-g,2~;':9å€x	"""  # Used for second, third and fourth level of encryption, shuffled
 textheight = 8
 lvl3bg = 50
 lvl3sm = 20
@@ -258,7 +258,7 @@ def encrypt31():
     global key
     txt2 = Text(window, height = textheight)  
     btn4 = Button(window, text = "Use key", command = encrypt33)
-    lbl2 = Label(window, text = 'Write the key you want to use, the larger the key the better the encryption.\nYou will need to securely send this key to your recipient.\nUse numbers ONLY.')
+    lbl2 = Label(window, text = 'Write the key you want to use, the larger the key the better the encryption.\nYou will need to securely send this key to your recipient.')
     lbl2.pack(side = TOP)
     btn4.pack(side = BOTTOM)
     txt2.pack()
@@ -384,6 +384,7 @@ def encrypt44():
         x = 0
         global notalphabet
         for i in key:
+            print(notalphabet)
             temp1 = notalphabet.find(i)
             key[x] = temp1
             x += 1
