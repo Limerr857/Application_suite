@@ -39,6 +39,11 @@ Generates som epretty good names for you! This one doesn't need much of an expla
 
 Company names, Robot names, Human names, Country names.
 
+#### Autoclicker:
+For all your autoclicking needs, will be updated very soon with new features. Press Enter and watch your clickrate increase to over 30!!!
+
+NOTE: Does not work on mac.
+
 ## Installation
 To install simply download and uncompress the .zip file. After that, open `Application_suite.exe`.
 For updating simply delete all the old files and reinstall. A better system may be developed in the future.

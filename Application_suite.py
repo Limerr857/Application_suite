@@ -18,6 +18,7 @@ def begin():
     btn2 = Button(root, text = "Calculat0r", command = Calculat0r).pack(fill=X)
     btn3 = Button(root, text = "Image Of The Day", command = IOTD).pack(fill=X)
     btn4 = Button(root, text = "Gambler", command = Gambler).pack(fill=X)
+    btn5 = Button(root, text = "Autoclicker", command = Autoclicker).pack(fill=X)
 
 def Encrypt0r():
     exec(open("Encrypt0r.py", encoding="utf-8").read(), globals())
@@ -34,10 +35,12 @@ def Gambler():
 def NameGenerator():
     exec(open("NameGenerator.py", encoding="utf-8").read(),globals())
 
+def Autoclicker():
+    exec(open("Autoclicker.py", encoding="utf-8").read(),globals())
 
 root = Tk()
 root.geometry("550x300")
-root.title("GE:APPS v.0.4")
+root.title("GE:APPS v.0.5")
 btn1 = Button(root, text = "Start browsing", command = begin)
 btn1.pack()
 root.mainloop()
