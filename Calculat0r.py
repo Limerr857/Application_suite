@@ -138,7 +138,7 @@ def count():
         counter.append("ERROR")
         main()
 
-root = Tk()
+root = Toplevel()
 root.geometry("304x300")
 root.title("Calculat0r")
 btn1 = Button(root, text = "Start calculating", command = begin)
