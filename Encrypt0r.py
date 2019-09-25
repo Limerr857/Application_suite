@@ -384,7 +384,6 @@ def encrypt44():
         x = 0
         global notalphabet
         for i in key:
-            print(notalphabet)
             temp1 = notalphabet.find(i)
             key[x] = temp1
             x += 1
