@@ -20,7 +20,8 @@ def begin():
     btn2 = Button(root, text = "Calculat0r", command = Calculat0r).pack(fill=X)
     btn3 = Button(root, text = "Image Of The Day", command = IOTD).pack(fill=X)
     btn4 = Button(root, text = "Gambler", command = Gambler).pack(fill=X)
-    btn5 = Button(root, text = "Autoclicker", command = Autoclicker).pack(fill=X)
+    btn5 = Button(root, text = "NameGenerator", command = NameGenerator).pack(fill=X)
+    btn6 = Button(root, text = "Autoclicker", command = Autoclicker).pack(fill=X)
 
 def Encrypt0r():
     exec(open("Encrypt0r.py", encoding="utf-8").read(), globals())
