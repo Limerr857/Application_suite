@@ -8,6 +8,8 @@ from os.path import isfile, join, dirname
 import os
 from PIL import ImageTk, Image
 import time
+import pyautogui
+from pynput.keyboard import Key, Listener
 
 
 def begin():
