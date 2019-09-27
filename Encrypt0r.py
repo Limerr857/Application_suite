@@ -35,12 +35,14 @@ def encrypt():
     btn10 = Button(window, text = "Level 3", command = encrypt3)
     btn11 = Button(window, text = "Level 4", command = encrypt4)
     btn12 = Button(window, text = "Level 5", command = encrypt5)
+    btn13 = Button(window, text = "Level 6", command = encrypt6)
     lbl6.pack(side = TOP)
     btn8.pack(fill = X)
     btn9.pack(fill = X)
     btn10.pack(fill = X)
     btn11.pack(fill = X)
     btn12.pack(fill = X)
+    btn13.pack(fill = X)
 
 def decrypt():
     for widget in window.winfo_children():
@@ -51,12 +53,14 @@ def decrypt():
     btn10 = Button(window, text = "Level 3", command = decrypt3)
     btn11 = Button(window, text = "Level 4", command = decrypt4)
     btn12 = Button(window, text = "Level 5", command = decrypt5)
+    btn13 = Button(window, text = "Level 6", command = decrypt6)
     lbl6.pack(side = TOP)
     btn8.pack(fill = X)  # Fill is used for A S T H E T I C S
     btn9.pack(fill = X)
     btn10.pack(fill = X)
     btn11.pack(fill = X)
     btn12.pack(fill = X)
+    btn13.pack(fill = X)
 
 
 # Level 1
@@ -680,6 +684,121 @@ def decrypt55():
     btn7.pack(side = BOTTOM)
     txt2.configure(bg=window.cget('bg'), relief=FLAT)   
     txt2.configure(state="disabled") 
+
+
+# TODO: Make level 6 output to .txt file
+def encrypt6():  # Sixth most insecure, uses every lower level of encryption combined twice.
+    for widget in window.winfo_children():
+        widget.destroy()
+    global txt2
+    txt2 = Text(window, height = textheight)  
+    btn4 = Button(window, text = "Encrypt", command = encrypt61)
+    lbl2 = Label(window, text = 'Write the message you want to encrypt and press "Encrypt"')
+    lbl2.pack(side = TOP)
+    btn4.pack(side = BOTTOM)
+    txt2.pack()
+
+def encrypt61():
+    global txt2
+    global temp2
+    temp2 = txt2.get("1.0",'end-1c')  # Gets everything from the inputted text
+    for widget in window.winfo_children():
+        widget.destroy()
+    global key
+    txt2 = Text(window, height = textheight)  
+    btn4 = Button(window, text = "Use key", command = encrypt66)
+    lbl2 = Label(window, text = 'Write the key you want to use, the larger the key the better the encryption.\nYou will need to securely send this key to your recipient.\nYou can use both numbers, letters and special characters.')
+    lbl2.pack(side = TOP)
+    btn4.pack(side = BOTTOM)
+    txt2.pack()
+
+def encrypt66():
+    global txt2
+    global key
+    global lvl5_active
+    global temp2
+    lvl5_active = True
+    key = txt2.get("1.0",'end-1c')  # Gets everything from the inputted text
+    for widget in window.winfo_children():
+        widget.destroy()
+    encrypt22()
+    temp2 = message
+    encrypt33()
+    temp2 = message
+    encrypt44()
+    temp2 = message
+    encrypt22()
+    temp2 = message
+    encrypt33()
+    temp2 = message
+    encrypt44()
+    temp2 = message
+    
+    file = open("Encrypt0r_InOut.txt", "w")
+    file.truncate(0)
+    file.write(message)
+    file.close() 
+    lbl5 = Label(window, text = "Your encrypted message should now be in Encrypt0r_InOut.txt.")
+    btn7 = Button(window, text = "Restart Encrypt0r", command = strt)
+    lbl5.grid(row = 1)
+    btn7.grid(row = 3)
+
+
+def decrypt6():  # Sixth most insecure, uses every lower level of encryption combined twice.
+    for widget in window.winfo_children():
+        widget.destroy()
+    btn4 = Button(window, text = "Decrypt", command = decrypt61)
+    lbl2 = Label(window, text = 'Make sure your message is inside Encrypt0r_InOut.txt and press "Decrypt"')
+    lbl2.pack(side = TOP)
+    btn4.pack(side = BOTTOM)
+
+def decrypt61():
+    global txt2
+    global temp2
+    file = open("Encrypt0r_InOut.txt", "r")
+    temp2 = file.read()
+    file.close() 
+    for widget in window.winfo_children():
+        widget.destroy()
+    global key
+    txt2 = Text(window, height = textheight)  
+    btn4 = Button(window, text = "Use key", command = decrypt66)
+    lbl2 = Label(window, text = 'Type or paste the key that the sender has sent you securely.')
+    lbl2.pack(side = TOP)
+    btn4.pack(side = BOTTOM)
+    txt2.pack()
+
+def decrypt66():
+    global txt2
+    global key
+    global lvl5_active
+    global temp2
+    lvl5_active = True
+    key = txt2.get("1.0",'end-1c')  # Gets everything from the inputted text
+    for widget in window.winfo_children():
+        widget.destroy()
+    decrypt44()
+    temp2 = message
+    decrypt33()
+    temp2 = message
+    decrypt22()
+    temp2 = message
+    decrypt44()
+    temp2 = message
+    decrypt33()
+    temp2 = message
+    decrypt22()
+
+    txt2 = Text(window, height = 8, wrap = WORD) 
+    txt2.insert(1.0, message)
+    open('Encrypt0r_InOut.txt', 'w').close()
+    lbl5 = Label(window, text = "Here is your decrypted message:")
+    btn7 = Button(window, text = "Restart Encrypt0r", command = strt)
+    lbl5.pack(side = TOP)
+    txt2.pack()
+    btn7.pack(side = BOTTOM)
+    txt2.configure(bg=window.cget('bg'), relief=FLAT)   
+    txt2.configure(state="disabled")
 
 global window
 window = Tk()
