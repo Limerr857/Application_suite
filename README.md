@@ -54,11 +54,9 @@ NOTE: Does not work on mac.
 2. Put all of the files into the same directory
 3. Launch `Application_suite.py`.
 
-NOTE: Method 2 requires python 3.7 and the following packages:
-- tkinter
-- ttk
-- pillow
-- pyautogui
+NOTE: Method 2 requires python [3.7.4](https://www.python.org/downloads/) and the following packages:
+- [pillow](https://pillow.readthedocs.io/en/stable/installation.html)
+- [pyautogui](https://pyautogui.readthedocs.io/en/latest/install.html)
     
     
     
