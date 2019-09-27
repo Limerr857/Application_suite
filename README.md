@@ -46,18 +46,19 @@ NOTE: Does not work on mac.
 
 ## Installation
 - Method 1:
-1. Download, uncompress and open the .zip file. 
-2. Open `Application_suite.exe`.
+  1. Download, uncompress and open the .zip file. 
+  2. Open `Application_suite.exe`.
 
 - Method 2:
-NOTE: Requires python 3.7 and the following packages:
-- tkinter
-- ttk
-- pillow
-- pyautogui
-- pynput
-1. Download all .py files aswell as the image folder
-2. Put all of the files into the same directory
-3. Launch `Application_suite.py`.
+  
+  NOTE: Requires python 3.7 and the following packages:
+    - tkinter
+    - ttk
+    - pillow
+    - pyautogui
+    - pynput
+    1. Download all .py files aswell as the image folder
+    2. Put all of the files into the same directory
+    3. Launch `Application_suite.py`.
 
 If you find ways of improving my applications, please leave an issue on my github.
