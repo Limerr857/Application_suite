@@ -498,6 +498,7 @@ def decrypt44():
         i = notalphabet[i]
         message[x] = i
         x += 1
+    notalphabet = ''.join(str(e) for e in notalphabet)
     message = ''.join(str(e) for e in message)
     txt2 = Text(window, height = 8, wrap = WORD) 
     txt2.insert(1.0, message)
