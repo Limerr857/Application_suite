@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter.ttk import *
 import random
 
-  # Variables:
+# Variables:
 global temp
 temp = ""
 global temp2

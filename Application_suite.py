@@ -22,6 +22,7 @@ def begin():
     btn4 = Button(root, text = "Gambler", command = Gambler).pack(fill=X)
     btn5 = Button(root, text = "NameGenerator", command = NameGenerator).pack(fill=X)
     btn6 = Button(root, text = "Autoclicker", command = Autoclicker).pack(fill=X)
+    btn7 = Button(root, text = "Randomizer", command = Randomizer).pack(fill=X)
 
 def Encrypt0r():
     exec(open("Encrypt0r.py", encoding="utf-8").read(), globals())
@@ -40,6 +41,9 @@ def NameGenerator():
 
 def Autoclicker():
     exec(open("Autoclicker.py", encoding="utf-8").read(),globals())
+
+def Randomizer():
+    exec(open("Randomizer.py", encoding="utf-8").read(),globals())
 
 root = Tk()
 root.geometry("550x300")
