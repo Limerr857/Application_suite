@@ -4,16 +4,18 @@ from tkinter.ttk import *
 import random
 import time
 
-alphabet = """abcdefghijklmnopqrstuvwxyzåäö .,/_-+=():'*?!1234567890&$€#@^~;
+alphabet = """abcdefghijklmnopqrstuvwxyzåäöABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ .,/_-+=():'*?!1234567890&$€#@^~;
 	"""  # Used for first level of encryption
 alen = str.__len__(alphabet)  # Gets the length of this ^, used for easy adding of new characters
 global notalphabet
-notalphabet = """c!tp#eaw_m)ov*d5+.? j/
-z3@flä$nrhqök&4u^0(6=8bisy71-g,2~;':9å€x	"""  # Used for second, third and fourth level of encryption, shuffled
+notalphabet = """p?,V0gY#hx
+!BQ G:vjd;	2kMC6OKÅ1Ö=LS*scUw8nEio^7zl9€&IauJH4rW_m.~ZAtDR$båF5äN+y@X/-(PfTe)ö3Äq'"""  # Used for second, third and fourth level of encryption, shuffled
 textheight = 8
 lvl3bg = 50
 lvl3sm = 20
 lvl5_active = False
+# The number of times level 6 will iterate between the levels, too large of a setting may crash the program
+lvl6times = 2
 
 def strt():  # Start of the program, screen where you can choose between encrypt and decrypt.
     # Clears the entire window without deleting root
@@ -83,7 +85,6 @@ def encrypt11():  # Multiple def's used because of lazyness
         temp2 = txt2.get('1.0', 'end-1c')  # Gets everything from the inputted text
         for widget in window.winfo_children():
             widget.destroy()
-    temp2 = str.lower(temp2)
     message = list(temp2)
     msglen = len(message)
     x = 0
@@ -182,7 +183,6 @@ def encrypt22():
         temp2 = txt2.get('1.0', 'end-1c')  # Gets everything from the inputted text
         for widget in window.winfo_children():
             widget.destroy()
-    temp2 = str.lower(temp2)
     message = list(temp2)
     msglen = len(message)
     x = 0
@@ -310,7 +310,6 @@ def encrypt33():
             x += 1
         key = '+'.join(str(e) for e in key)
         key = eval(key)
-    temp2 = str.lower(temp2)
     message = list(temp2)
     x = 0
     for i in message:
@@ -452,7 +451,6 @@ def encrypt44():
         key = '+'.join(str(e) for e in key)
         key = eval(key)
     global temp2
-    temp2 = str.lower(temp2)
     msglen = len(temp2)
     message = list(temp2)
     x = 4
@@ -686,7 +684,7 @@ def decrypt55():
     txt2.configure(state="disabled") 
 
 
-# TODO: Make level 6 output to .txt file
+
 def encrypt6():  # Sixth most insecure, uses every lower level of encryption combined twice.
     for widget in window.winfo_children():
         widget.destroy()
@@ -717,23 +715,18 @@ def encrypt66():
     global key
     global lvl5_active
     global temp2
+    global lvl6times
     lvl5_active = True
     key = txt2.get("1.0",'end-1c')  # Gets everything from the inputted text
     for widget in window.winfo_children():
         widget.destroy()
-    encrypt22()
-    temp2 = message
-    encrypt33()
-    temp2 = message
-    encrypt44()
-    temp2 = message
-    encrypt22()
-    temp2 = message
-    encrypt33()
-    temp2 = message
-    encrypt44()
-    temp2 = message
-    
+    for i in range(lvl6times):
+        encrypt22()
+        temp2 = message
+        encrypt33()
+        temp2 = message
+        encrypt44()
+        temp2 = message
     file = open("Encrypt0r_InOut.txt", "w")
     file.truncate(0)
     file.write(message)
@@ -773,21 +766,18 @@ def decrypt66():
     global key
     global lvl5_active
     global temp2
+    global lvl6times
     lvl5_active = True
     key = txt2.get("1.0",'end-1c')  # Gets everything from the inputted text
     for widget in window.winfo_children():
         widget.destroy()
-    decrypt44()
-    temp2 = message
-    decrypt33()
-    temp2 = message
-    decrypt22()
-    temp2 = message
-    decrypt44()
-    temp2 = message
-    decrypt33()
-    temp2 = message
-    decrypt22()
+    for i in range(lvl6times):
+        decrypt44()
+        temp2 = message
+        decrypt33()
+        temp2 = message
+        decrypt22()
+        temp2 = message
 
     txt2 = Text(window, height = 8, wrap = WORD) 
     txt2.insert(1.0, message)
