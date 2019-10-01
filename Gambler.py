@@ -18,56 +18,11 @@ def begin():
         widget.destroy()
     lbl1 = Label(root, text = "So, how do you want to waste your money today?").pack(side = TOP)
     lbl2 = Label(root, text = "You have {} shmeckles.".format(money)).pack(side = TOP)
-    # Maybe scrap this idea for now? it was hard to program
-    #btn1 = Button(root, text = "Wheel of fortune!", command = Wheel).pack(fill=X)
-    btn2 = Button(root, text = "Guesser", command = Guesser).pack(fill=X)
-    btn3 = Button(root, text = "Boring", command = Boring).pack(fill=X)
-    btn4 = Button(root, text = "Waster", command = Waster).pack(fill=X)
-    btn5 = Button(root, text = "Bank", command = Bank).pack(fill=X)
 
-def Wheel():
-    for widget in root.winfo_children():
-        widget.destroy()
-    print("hellu")
-    btn1 = Button(root, text = "Spin the wheel!", command = Wheel1).pack()
-    print("ok")
-def Wheel1():
-    for widget in root.winfo_children():
-        widget.destroy()
-    print("yes")
-    result = random.randint(0, 99)
-    x = 0
-    y = 0
-    btn1 = Button(root, text = str(result-2)).pack()
-    btn2 = Button(root, text = str(result-1)).pack()
-    btn3 = Button(root, text = str(result)).pack()
-    btn4 = Button(root, text = str(result+1)).pack()
-    btn5 = Button(root, text = str(result+2)).pack()
-    while x!=3:
-        if y==result:
-            x += 1
-        if y== 100:
-            y = 0
-        print("1st", y)
-        time.sleep(0.01)
-        y += 1
-    while y!=result:
-        for widget in root.winfo_children():
-            widget.destroy()
-        btn1 = Button(root, text = str(result-2)).pack()
-        btn2 = Button(root, text = str(result-1)).pack()
-        btn3 = Button(root, text = str(result)).pack()
-        btn4 = Button(root, text = str(result+1)).pack()
-        btn5 = Button(root, text = str(result+2)).pack()
-        if y== 100:
-            y = 0
-        print("2nd", y)
-        time.sleep(0.1)
-        y += 1
-    for widget in root.winfo_children():
-            widget.destroy()
-    lbl1 = Label(root, text = "Congratulations, you win.").pack()
-    btn0 = Button(root, text = "Go back", command = begin).pack(side = BOTTOM)
+    btn1 = Button(root, text = "Guesser", command = Guesser).pack(fill=X)
+    btn2 = Button(root, text = "Boring", command = Boring).pack(fill=X)
+    btn3 = Button(root, text = "Waster", command = Waster).pack(fill=X)
+    btn4 = Button(root, text = "Bank", command = Bank).pack(fill=X)
 
 
 def Guesser():
@@ -136,6 +91,7 @@ def Guessercalc():
     ent1 = Entry(root)
     ent1.pack()
     btn1 = Button(root, text = "Guess!", command = Guessercalc2).pack()
+    btn0 = Button(root, text = "Go back", command = begin).pack(side = BOTTOM)
 def Guessercalc2():
     guess = ent1.get()
     try:
@@ -151,18 +107,16 @@ def Guessercalc2():
         lbl1 = Label(root, text = text1).pack()
         global money
         money += x
-        btn0 = Button(root, text = "Go back", command = begin).pack(side = BOTTOM)
     elif lock == False:
         lbl1 = Label(root, text = "You lost!").pack()
         lock = True
-        btn0 = Button(root, text = "Go back", command = begin).pack(side = BOTTOM)
+
         
 
 def Waster():
     for widget in root.winfo_children():
         widget.destroy()
-      # I actually have an iq of 1034 simply because i watch rick and morty.
-      # Make a simple story appear when you waste enough money, sortof like Candy box?
+    # Yes, very reference
     lbl1 = Label(root, text = "You have {} shmeckles.".format(money)).pack()
     lbl0 = Label(root, text = "You wasted {} shmeckles.".format(money_wasted)).pack()
     btn1 = Button(root, text = "Throw 10 shmeckles in the trash.", command = Waster2)

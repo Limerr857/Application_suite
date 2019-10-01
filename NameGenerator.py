@@ -117,8 +117,6 @@ def Robotcalc():
             tempD = str(random.randint(0, 9))
 
             temp = tempA + tempB + tempC + tempD
-        else:
-            print("error! 108")
 
         global temp2
         temp2.append(temp)

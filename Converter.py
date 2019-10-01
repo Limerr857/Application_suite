@@ -51,7 +51,6 @@ def convert15():
 def convert1():
     for widget in root.winfo_children():
         widget.destroy()
-    print("Convert1")
     global lst1
     global lst2
     global unit1
@@ -89,7 +88,6 @@ def convert2():
         ent1_input = float(ent1_input)
     except:
         result = "Not a float."
-        print("Not a float")
         convert15()
 
     # Welcome to elif hell.
@@ -142,7 +140,6 @@ def convert2():
 
     else:
         result = "Something went wrong."
-        print(result)
         convert15()
 
 

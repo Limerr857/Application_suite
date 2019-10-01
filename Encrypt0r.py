@@ -97,8 +97,6 @@ def encrypt11():  # Multiple def's used because of lazyness
             temp1 = 0
         elif temp1 == alen - 1:
             temp1 = 1
-        else:
-            print ("Error")
         temp1 = alphabet[temp1]
         message[x] = temp1
         x += 1
@@ -146,8 +144,6 @@ def decrypt11():
             temp1 = alen - 2
         elif temp1 == 0:
             temp1 = alen - 1
-        else:
-            print ("Error")
         temp1 = alphabet[temp1]
         message[x] = temp1
         x += 1
@@ -195,8 +191,6 @@ def encrypt22():
             temp1 = 0
         elif temp1 == alen - 1:
             temp1 = 1
-        else:
-            print ("Error")
         temp1 = notalphabet[temp1]
         message[x] = temp1
         x += 1
@@ -244,8 +238,6 @@ def decrypt22():
             temp1 = alen - 2
         elif temp1 == 0:
             temp1 = alen - 1
-        else:
-            print ("Error")
         temp1 = notalphabet[temp1]
         message[x] = temp1
         x += 1
