@@ -3,7 +3,7 @@ from tkinter import *
 from tkinter.ttk import *
 import time
 
-unitlist = ["Meters", "Feet", "Kilometers", "Miles"]
+unitlist = ["Meters", "Feet", "Kilometers", "Miles", "Centimeters"]
 
 def begin():
     global lst1
@@ -103,6 +103,9 @@ def convert2():
     elif "Meters" in unit1 and "Miles" in unit2:
         result = round((ent1_input / 1609.344), 3)
         convert1()
+    elif "Meters" in unit1 and "Centimeters" in unit2:
+        result = round((ent1_input * 100), 3)
+        convert1()
 
     # Feet    
     elif "Feet" in unit1 and "Meters" in unit2:
@@ -113,6 +116,9 @@ def convert2():
         convert1()
     elif "Feet" in unit1 and "Kilometers" in unit2:
         result = round((ent1_input / 3280.84), 3)
+        convert1()
+    elif "Feet" in unit1 and "Centimeters" in unit2:
+        result = round((ent1_input / 0.0328084), 3)
         convert1()
 
     # Kilometers
@@ -125,6 +131,9 @@ def convert2():
     elif "Kilometers" in unit1 and "Miles" in unit2:
         result = round((ent1_input / 1.609344), 3)
         convert1()
+    elif "Kilometers" in unit1 and "Centimeters" in unit2:
+        result = round((ent1_input * 100_000), 3)
+        convert1()
 
     # Miles
     elif "Miles" in unit1 and "Meters" in unit2:
@@ -135,6 +144,23 @@ def convert2():
         convert1()
     elif "Miles" in unit1 and "Kilometers" in unit2:
         result = round((ent1_input * 1.609344), 3)
+        convert1()
+    elif "Miles" in unit1 and "Centimeters" in unit2:
+        result = round((ent1_input * 160_934.4), 3)
+        convert1()
+
+    # Centimeters
+    elif "Centimeters" in unit1 and "Feet" in unit2:
+        result = round((ent1_input * 0.0328084), 3)
+        convert1()
+    elif "Centimeters" in unit1 and "Kilometers" in unit2:
+        result = round((ent1_input / 100_000), 3)
+        convert1()
+    elif "Centimeters" in unit1 and "Miles" in unit2:
+        result = round((ent1_input / 160_934.4), 3)
+        convert1()
+    elif "Centimeters" in unit1 and "Meters" in unit2:
+        result = round((ent1_input / 100), 3)
         convert1()
     
 
