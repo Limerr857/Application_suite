@@ -139,7 +139,6 @@ def convert2():
         result = round((ent1_input * 1.609344), 3)
         convert1()
     
-    
 
     else:
         result = "Something went wrong."
@@ -149,7 +148,7 @@ def convert2():
 
 
 root = Toplevel()
-root.geometry("300x300")
+root.geometry("400x300")
 root.title("Converter")
 btn1 = Button(root, text = "Convert units!", command = begin)
 btn1.pack()
