@@ -51,7 +51,7 @@ def Converter():
 
 root = Tk()
 root.geometry("550x300")
-root.title("Application Suite v.0.5")
+root.title("Application Suite v.0.6")
 btn1 = Button(root, text = "Start browsing", command = begin)
 btn1.pack()
 root.mainloop()
