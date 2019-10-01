@@ -13,8 +13,8 @@ To add more images: copy the images you want to add into the `image` folder.
 A simple calculator app. Mainly built as traing for more advanced stuff in the future.
 
 #### Encrypt0r:
-Encrypts messages using very simple methods, not really reliable scince you can brute-force your way trough most of it. Basically, do not use for anything other than fun.
-Level 1, 2 and 3 uses basically the same method, only with slightly different degrees of security. Level 4 is different, but can still be brute-forced. Level 5 combines all lower levels of encryption but size is dramastically increased. New codes are generated every day for level 4 and 5, so do not wait too long to send your message!
+Encrypts messages using very simple methods, not really reliable scince you can brute-force your way trough most of it. Do not use for anything other than fun.
+Level 1, 2 and 3 uses basically the same method, only with slightly different degrees of security. Level 4 is different, but can still be brute-forced. Level 5 and 6 combines all lower levels of encryption but size is dramastically increased. New codes are generated every day for level 4 and up, so do not wait too long to send your message!
 
 To use:
 1. Choose a security level, I recommend level 4 or 5.
@@ -43,6 +43,9 @@ Company names, Robot names, Human names, Country names.
 For all your autoclicking needs, will be updated very soon with new features. Press Enter and watch your clickrate increase to over 30!!!
 
 NOTE: Does not work on mac.
+
+#### Converter:
+Use this handy-dandy tool to convert most of the units you will ever need. New units will be added infrequently.
 
 ## Installation
 ##### Method 1:
