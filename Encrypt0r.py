@@ -512,7 +512,6 @@ def decrypt44():
     global key
     if lvl5_active == False:
         global txt2
-        global temp2
         key = txt2.get("1.0",'end-1c')  # Gets everything from the inputted text
         for widget in window.winfo_children():
             widget.destroy()
