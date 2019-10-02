@@ -55,14 +55,16 @@ NOTE: Does not work on mac.
 
 Use this handy-dandy tool to convert most of the units you will ever need. New units will be added infrequently.
 
-# Installation
+---
 
-## Method 1
+## Installation
+
+### Method 1
 
   1. Download, uncompress and open the .zip file.
   2. Open `Application_suite.exe`.
 
-## Method 2
+### Method 2
 
 1. Download all .py files aswell as the image folder.
 2. Put all of the files into the same directory.
