@@ -111,7 +111,6 @@ def Guessercalc2():
         lbl1 = Label(root, text = "You lost!").pack()
         lock = True
 
-        
 
 def Waster():
     for widget in root.winfo_children():
