@@ -19,6 +19,8 @@ def begin():
     btn3 = Button(root, text = "Random letters!", command = Let).pack(fill=X)
     btn4 = Button(root, text = "Random symbols!", command = Sym).pack(fill=X)
     btn5 = Button(root, text = "Random numbers and symbols!", command = NumSym).pack(fill=X)
+    #btn6 = Button(root, text = "Randomize order!", command = RanOrd).pack(fill=X)
+    btn7 = Button(root, text = "Shuffle string!", command = ShuStr).pack(fill=X)
 
 def Num():
     global ent1
@@ -164,6 +166,31 @@ def NumSym2():
                     temp.append(temp3)
             temp = "".join(temp)
     NumSym()
+
+def ShuStr():
+    global ent1
+    global temp
+    for widget in root.winfo_children():
+        widget.destroy()
+    txt1 = Text(root, height = 8, wrap = WORD) 
+    txt1.insert(1.0, temp)
+    btn1 = Button(root, text="Shuffle letters!", command=ShuStr2)
+    btn2 = Button(root, text="Go back", command=begin)
+    lbl2 = Label(root, text="Shuffle this:")
+    ent1 = Entry(root)
+    txt1.pack(side=TOP)
+    btn2.pack(side=BOTTOM)
+    btn1.pack(side=BOTTOM)
+    lbl2.pack()
+    ent1.pack()
+def ShuStr2():
+    global ent1
+    global temp
+    temp2 = ent1.get()
+    temp2 = list(temp2)
+    random.shuffle(temp2)
+    temp = "".join(str(e) for e in temp2)
+    ShuStr()
 
 
 root = Toplevel()
