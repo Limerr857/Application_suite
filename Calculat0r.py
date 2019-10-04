@@ -28,7 +28,7 @@ def begin():
     btn8 = Button(root, text = "8", command = _btn8).grid(row = 3, column = 5)
     btn9 = Button(root, text = "9", command = _btn9).grid(row = 3, column = 6)
 
-      # Operators
+    # Operators
     btnplus = Button(root, text = "+", command = _btnplus).grid(row = 3, column = 7)
     btnminus = Button(root, text = "-", command = _btnminus).grid(row = 4, column = 7)
     btnmult = Button(root, text = "*", command = _btnmult).grid(row = 5, column = 7)
@@ -37,12 +37,12 @@ def begin():
     btnparr = Button(root, text = ")", command = _btnparr).grid(row = 6, column = 6)  # Parenthesis right
     btnpwr = Button(root, text = "^", command = _btnpwr).grid(row = 7, column = 7)
 
-      # Meta
-    btnequals = Button(root, text = "=", command = count).grid(row = 8, column = 5)
+    # Meta
+    btnequals = Button(root, text = "=", command = count).grid(row = 8, column = 5, columnspan = 2, sticky = (W,E))
     btndel = Button(root, text = "DELETE", command = _btndel).grid(row = 8, column = 4)
-    btnclr = Button(root, text = "CLEAR", command = _btnclr).grid(row = 8, column = 6)
+    btnclr = Button(root, text = "CLEAR", command = _btnclr).grid(row = 8, column = 7)
 
-      # Constants
+    # Constants
     btnpi = Button(root, text = "π", command = _btnpi).grid(row = 7, column = 4)
     btne = Button(root, text = "e", command = _btne).grid(row = 7, column = 5)
     btnphi = Button(root, text = "Φ", command = _btnphi).grid(row = 7, column = 6)
