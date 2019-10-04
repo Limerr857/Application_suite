@@ -784,7 +784,7 @@ def decrypt66():
     txt2.configure(state="disabled")
 
 global window
-window = Tk()
+window = Toplevel()
 window.geometry("700x400")
 window.title("Encrypt0r")
 btn1 = Button(window, text = "Start Encrypt0r", command = strt)
