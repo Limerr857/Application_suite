@@ -696,21 +696,22 @@ def encrypt61():
     for widget in window.winfo_children():
         widget.destroy()
     global key
-    txt2 = Text(window, height = textheight)  
     btn4 = Button(window, text = "Use key", command = encrypt66)
-    lbl2 = Label(window, text = 'Write the key you want to use, the larger the key the better the encryption.\nYou will need to securely send this key to your recipient.\nYou can use both numbers, letters and special characters.')
+    lbl2 = Label(window, 
+    text = '''Make sure your key is in the "key.txt" folder of the "keys" folder in your directory.''')
     lbl2.pack(side = TOP)
     btn4.pack(side = BOTTOM)
-    txt2.pack()
 
 def encrypt66():
-    global txt2
     global key
     global lvl5_active
     global temp2
     global lvl6times
     lvl5_active = True
-    key = txt2.get("1.0",'end-1c')  # Gets everything from the inputted text
+    f = open("keys/key.txt", "r")
+    key = f.read()
+    f.close()
+    #key = txt2.get("1.0",'end-1c')  # Gets everything from the inputted text
     for widget in window.winfo_children():
         widget.destroy()
     for i in range(lvl6times):
@@ -746,22 +747,23 @@ def decrypt61():
     file.close() 
     for widget in window.winfo_children():
         widget.destroy()
-    global key
-    txt2 = Text(window, height = textheight)  
+    global key 
     btn4 = Button(window, text = "Use key", command = decrypt66)
-    lbl2 = Label(window, text = 'Type or paste the key that the sender has sent you securely.')
+    lbl2 = Label(window, 
+    text = Make sure the key that the sender has sent you securely is located inside the key.txt file inside of the keys folder.')
     lbl2.pack(side = TOP)
     btn4.pack(side = BOTTOM)
-    txt2.pack()
 
 def decrypt66():
-    global txt2
     global key
     global lvl5_active
     global temp2
     global lvl6times
     lvl5_active = True
-    key = txt2.get("1.0",'end-1c')  # Gets everything from the inputted text
+    f = open("keys/key.txt", "r")
+    key = f.read()
+    f.close()
+    #key = txt2.get("1.0",'end-1c')  # Gets everything from the inputted text
     for widget in window.winfo_children():
         widget.destroy()
     for i in range(lvl6times):
