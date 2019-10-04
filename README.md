@@ -55,6 +55,10 @@ NOTE: Does not work on mac.
 
 Use this handy-dandy tool to convert most of the units you will ever need. New units will be added infrequently.
 
+## Randomizer
+
+Randomize some stuff. Mostly made for myself. Comes with several modes: numbers, letters, symbols, and all combined. Also comes with a string shuffler.
+
 ---
 
 ## Installation

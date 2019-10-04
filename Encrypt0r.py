@@ -750,7 +750,7 @@ def decrypt61():
     global key 
     btn4 = Button(window, text = "Use key", command = decrypt66)
     lbl2 = Label(window, 
-    text = Make sure the key that the sender has sent you securely is located inside the key.txt file inside of the keys folder.')
+    text = "Make sure the key that the sender has sent you securely is located inside the key.txt file inside of the keys folder.")
     lbl2.pack(side = TOP)
     btn4.pack(side = BOTTOM)
 
