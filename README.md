@@ -1,6 +1,6 @@
 # Application_Suite
 
-This is a small collection of python applications for you to enjoy. 
+This is a small collection of python applications for you to enjoy.
 Info about the individual projects below.
 
 ## Image Of The Day (IOTD)
