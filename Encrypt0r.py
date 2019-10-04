@@ -18,6 +18,8 @@ lvl5_active = False
 lvl6times = 2
 
 def strt():  # Start of the program, screen where you can choose between encrypt and decrypt.
+    global lvl5_active
+    lvl5_active = False
     # Clears the entire window without deleting root
     for widget in window.winfo_children(): 
         widget.destroy()
@@ -235,9 +237,9 @@ def decrypt22():
         if temp1 >= 2:
             temp1 += -2
         elif temp1 == 1:
-            temp1 = alen - 2
-        elif temp1 == 0:
             temp1 = alen - 1
+        elif temp1 == 0:
+            temp1 = alen - 2
         temp1 = notalphabet[temp1]
         message[x] = temp1
         x += 1
