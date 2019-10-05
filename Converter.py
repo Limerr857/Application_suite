@@ -3,7 +3,7 @@ from tkinter import *
 from tkinter.ttk import *
 import time
 
-unitlist = ["Meters", "Feet", "Kilometers", "Miles", "Centimeters"]
+unitlist = ["Meters", "Feet", "Kilometers", "Miles", "Centimeters", "Inches"]
 
 def begin():
     global lst1
@@ -90,8 +90,8 @@ def convert2():
         result = "Not a float."
         convert15()
 
-    # Welcome to elif hell.
 
+    # Welcome to elif hell.
 
     # Meters
     if "Meters" in unit1 and "Feet" in unit2:
@@ -105,6 +105,9 @@ def convert2():
         convert1()
     elif "Meters" in unit1 and "Centimeters" in unit2:
         result = round((ent1_input * 100), 3)
+        convert1()
+    elif "Meters" in unit1 and "Inches" in unit2:
+        result = round((ent1_input * 39.37008), 3)
         convert1()
 
     # Feet    
@@ -120,6 +123,9 @@ def convert2():
     elif "Feet" in unit1 and "Centimeters" in unit2:
         result = round((ent1_input / 0.0328084), 3)
         convert1()
+    elif "Feet" in unit1 and "Inches" in unit2:
+        result = round((ent1_input * 12), 3)
+        convert1()
 
     # Kilometers
     elif "Kilometers" in unit1 and "Meters" in unit2:
@@ -133,6 +139,9 @@ def convert2():
         convert1()
     elif "Kilometers" in unit1 and "Centimeters" in unit2:
         result = round((ent1_input * 100_000), 3)
+        convert1()
+    elif "Kilometers" in unit1 and "Inches" in unit2:
+        result = round((ent1_input * 39370.08), 3)
         convert1()
 
     # Miles
@@ -148,6 +157,9 @@ def convert2():
     elif "Miles" in unit1 and "Centimeters" in unit2:
         result = round((ent1_input * 160_934.4), 3)
         convert1()
+    elif "Miles" in unit1 and "Inches" in unit2:
+        result = round((ent1_input * 63360), 3)
+        convert1()
 
     # Centimeters
     elif "Centimeters" in unit1 and "Feet" in unit2:
@@ -161,6 +173,26 @@ def convert2():
         convert1()
     elif "Centimeters" in unit1 and "Meters" in unit2:
         result = round((ent1_input / 100), 3)
+        convert1()
+    elif "Centimeters" in unit1 and "Inches" in unit2:
+        result = round((ent1_input * 0.3937008), 3)
+        convert1()
+
+    # Inches
+    elif "Inches" in unit1 and "Feet" in unit2:
+        result = round((ent1_input * 0.08333333), 3)
+        convert1()
+    elif "Inches" in unit1 and "Kilometers" in unit2:
+        result = round((ent1_input * 0.0000254), 3)
+        convert1()
+    elif "Inches" in unit1 and "Miles" in unit2:
+        result = round((ent1_input * 0.00001578283), 3)
+        convert1()
+    elif "Inches" in unit1 and "Meters" in unit2:
+        result = round((ent1_input * 0.0254), 3)
+        convert1()
+    elif "Inches" in unit1 and "Centimeters" in unit2:
+        result = round((ent1_input * 2.54), 3)
         convert1()
     
 
