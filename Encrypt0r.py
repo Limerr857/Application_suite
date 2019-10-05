@@ -102,11 +102,14 @@ def encrypt11():  # Multiple def's used because of lazyness
         temp1 = message[x]
         temp1 = alphabet.find(temp1)
         y = 2
-        if temp1 <= alen - (y+1):
-            temp1 += y
-        elif temp1 >= alen - y:
-            temp1 = (temp1 + y) - (alen - 1)
-        temp1 = alphabet[temp1]
+        temp1 += y + 2
+        if temp1 > alen:
+            temp1 -= alen
+        # if temp1 <= alen - (y+1):
+        #     temp1 += y
+        # elif temp1 >= alen - y:
+        #     temp1 = (temp1 + y) - (alen - 1)
+        temp1 = alphabet[temp1-1]
         message[x] = temp1
         x += 1
     message = ''.join(message)
@@ -152,11 +155,14 @@ def decrypt11():
         temp1 = message[x]
         temp1 = alphabet.find(temp1)
         y = 2
-        if temp1 >= y:
-            temp1 -= y
-        elif temp1 < y:
-            temp1 = (temp1 - y) + (alen - 1)
-        temp1 = alphabet[temp1]
+        temp1 -= y
+        if temp1 < 0:
+            temp1 += alen
+        # if temp1 >= y:
+        #     temp1 -= y
+        # elif temp1 < y:
+        #     temp1 = (temp1 - y) + (alen - 1)
+        temp1 = alphabet[temp1-1]
         message[x] = temp1
         x += 1
     message = ''.join(message)
@@ -201,12 +207,15 @@ def encrypt22():
     while x < msglen:
         temp1 = message[x]
         temp1 = notalphabet.find(temp1)
-        y = 2
-        if temp1 <= alen - (y+1):
-            temp1 += y
-        elif temp1 >= alen - y:
-            temp1 = (temp1 + y) - (alen - 1)
-        temp1 = notalphabet[temp1]
+        y = 7
+        temp1 += y
+        if temp1 > alen:
+            temp1 -= alen
+        # if temp1 <= alen - (y+1):
+        #     temp1 += y
+        # elif temp1 >= alen - y:
+        #     temp1 = (temp1 + y) - (alen - 1)
+        temp1 = notalphabet[temp1-1]
         message[x] = temp1
         x += 1
     message = ''.join(message)
@@ -251,11 +260,14 @@ def decrypt22():
     while x < msglen:
         temp1 = message[x]
         temp1 = notalphabet.find(temp1)
-        y = 2
-        if temp1 >= y:
-            temp1 -= y
-        elif temp1 < y:
-            temp1 = (temp1 - y) + (alen - 1)
+        y = 7
+        temp1 -= y - 1
+        if temp1 < 0:
+            temp1 += alen
+        # if temp1 >= y:
+        #     temp1 -= y
+        # elif temp1 < y:
+        #     temp1 = (temp1 - y) + (alen - 1)
         temp1 = notalphabet[temp1]
         message[x] = temp1
         x += 1
@@ -509,7 +521,7 @@ def encrypt44():
         #
         message[x] = i
         x += 1
-    message = '    '.join(str(e) for e in message)
+    message = ' '.join(str(e) for e in message)
     if lvl5_active == False:
         txt2 = Text(window, height=8, wrap=WORD)
         txt2.insert(1.0, message)
