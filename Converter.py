@@ -1,4 +1,3 @@
-
 from tkinter import *
 from tkinter.ttk import *
 import time
@@ -6,12 +5,13 @@ import time
 distlist = ["Meters", "Feet", "Kilometers", "Miles", "Centimeters", "Inches"]
 templist = ["Kelvin", "Celsius", "Fahrenheit"]
 
+
 def start():
     for widget in root.winfo_children():
         widget.destroy()
-    btn1 = Button(root, text = "Convert distance units!", command = begindist)
+    btn1 = Button(root, text="Convert distance units!", command=begindist)
     btn1.pack()
-    btn2 = Button(root, text = "Convert temperature units!", command = begintemp)
+    btn2 = Button(root, text="Convert temperature units!", command=begintemp)
     btn2.pack()
     #btn3 = Button(root, text = "Convert time units!", command = begintime)
     #btn3.pack()
@@ -23,9 +23,11 @@ def begindist():
     global distlist
     for widget in root.winfo_children():
         widget.destroy()
-    lbl1 = Label(root, text = "What do you want to convert?").pack(side = TOP)
-    btn2 = Button(root, text = "Go back", command = start).pack(fill=X, side=BOTTOM)
-    btn1 = Button(root, text = "Convert!", command = convertdist0).pack(fill=X, side=BOTTOM)
+    lbl1 = Label(root, text="What do you want to convert?").pack(side=TOP)
+    btn2 = Button(root, text="Go back", command=start).pack(fill=X,
+                                                            side=BOTTOM)
+    btn1 = Button(root, text="Convert!",
+                  command=convertdist0).pack(fill=X, side=BOTTOM)
 
     lst1 = Listbox(root)
     for item in distlist:
@@ -36,6 +38,7 @@ def begindist():
     for item in distlist:
         lst2.insert(END, item)
     lst2.pack(side=RIGHT, fill=X)
+
 
 def convertdist0():
     global lst1
@@ -57,8 +60,10 @@ def convertdist0():
     result = ""
     convertdist15()
 
+
 def convertdist15():
     convertdist1()
+
 
 def convertdist1():
     for widget in root.winfo_children():
@@ -87,6 +92,7 @@ def convertdist1():
     txt1.insert(1.0, "{}: {}".format((''.join(str(e) for e in unit2)), result))
     txt1.pack()
 
+
 def convertdist2():
     global unit1
     global unit2
@@ -95,13 +101,12 @@ def convertdist2():
     time.sleep(0.04)
 
     ent1_input = ent1.get()
-    
+
     try:
         ent1_input = float(ent1_input)
     except:
         result = "Not a float."
         convertdist15()
-
 
     # Welcome to elif hell.
 
@@ -122,7 +127,7 @@ def convertdist2():
         result = round((ent1_input * 39.37008), 3)
         convertdist1()
 
-    # Feet    
+    # Feet
     elif "Feet" in unit1 and "Meters" in unit2:
         result = round((ent1_input / 3.28084), 3)
         convertdist1()
@@ -206,12 +211,10 @@ def convertdist2():
     elif "Inches" in unit1 and "Centimeters" in unit2:
         result = round((ent1_input * 2.54), 3)
         convertdist1()
-    
 
     else:
         result = "Something went wrong."
         convertdist15()
-
 
 
 def begintemp():
@@ -220,9 +223,11 @@ def begintemp():
     global templist
     for widget in root.winfo_children():
         widget.destroy()
-    lbl1 = Label(root, text = "What do you want to convert?").pack(side = TOP)
-    btn2 = Button(root, text = "Go back", command = start).pack(fill=X, side=BOTTOM)
-    btn1 = Button(root, text = "Convert!", command = converttemp0).pack(fill=X, side=BOTTOM)
+    lbl1 = Label(root, text="What do you want to convert?").pack(side=TOP)
+    btn2 = Button(root, text="Go back", command=start).pack(fill=X,
+                                                            side=BOTTOM)
+    btn1 = Button(root, text="Convert!",
+                  command=converttemp0).pack(fill=X, side=BOTTOM)
 
     lst1 = Listbox(root)
     for item in templist:
@@ -233,6 +238,7 @@ def begintemp():
     for item in templist:
         lst2.insert(END, item)
     lst2.pack(side=RIGHT, fill=X)
+
 
 def converttemp0():
     global lst1
@@ -254,8 +260,10 @@ def converttemp0():
     result = ""
     converttemp15()
 
+
 def converttemp15():
     converttemp1()
+
 
 def converttemp1():
     for widget in root.winfo_children():
@@ -284,6 +292,7 @@ def converttemp1():
     txt1.insert(1.0, "{}: {}".format((''.join(str(e) for e in unit2)), result))
     txt1.pack()
 
+
 def converttemp2():
     global unit1
     global unit2
@@ -292,13 +301,12 @@ def converttemp2():
     time.sleep(0.04)
 
     ent1_input = ent1.get()
-    
+
     try:
         ent1_input = float(ent1_input)
     except:
         result = "Not a float."
         converttemp15()
-
 
     # Welcome to elif hell.
 
@@ -331,8 +339,6 @@ def converttemp2():
         print(unit1)
         print(unit2)
         converttemp15()
-
-
 
 
 root = Toplevel()
