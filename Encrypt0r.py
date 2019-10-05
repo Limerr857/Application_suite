@@ -101,12 +101,11 @@ def encrypt11():  # Multiple def's used because of lazyness
     while x < msglen:
         temp1 = message[x]
         temp1 = alphabet.find(temp1)
-        if temp1 <= alen - 3:
-            temp1 += 2
-        elif temp1 == alen - 2:
-            temp1 = 0
-        elif temp1 == alen - 1:
-            temp1 = 1
+        y = 2
+        if temp1 <= alen - (y+1):
+            temp1 += y
+        elif temp1 >= alen - y:
+            temp1 = (temp1 + y) - (alen - 1)
         temp1 = alphabet[temp1]
         message[x] = temp1
         x += 1
@@ -152,12 +151,11 @@ def decrypt11():
     while x < msglen:
         temp1 = message[x]
         temp1 = alphabet.find(temp1)
-        if temp1 >= 2:
-            temp1 += -2
-        elif temp1 == 1:
-            temp1 = alen - 2
-        elif temp1 == 0:
-            temp1 = alen - 1
+        y = 2
+        if temp1 >= y:
+            temp1 -= y
+        elif temp1 < y:
+            temp1 = (temp1 - y) + (alen - 1)
         temp1 = alphabet[temp1]
         message[x] = temp1
         x += 1
@@ -203,12 +201,11 @@ def encrypt22():
     while x < msglen:
         temp1 = message[x]
         temp1 = notalphabet.find(temp1)
-        if temp1 <= alen - 3:
-            temp1 += 2
-        elif temp1 == alen - 2:
-            temp1 = 0
-        elif temp1 == alen - 1:
-            temp1 = 1
+        y = 2
+        if temp1 <= alen - (y+1):
+            temp1 += y
+        elif temp1 >= alen - y:
+            temp1 = (temp1 + y) - (alen - 1)
         temp1 = notalphabet[temp1]
         message[x] = temp1
         x += 1
@@ -254,12 +251,11 @@ def decrypt22():
     while x < msglen:
         temp1 = message[x]
         temp1 = notalphabet.find(temp1)
-        if temp1 >= 2:
-            temp1 += -2
-        elif temp1 == 1:
-            temp1 = alen - 1
-        elif temp1 == 0:
-            temp1 = alen - 2
+        y = 2
+        if temp1 >= y:
+            temp1 -= y
+        elif temp1 < y:
+            temp1 = (temp1 - y) + (alen - 1)
         temp1 = notalphabet[temp1]
         message[x] = temp1
         x += 1
@@ -661,6 +657,8 @@ def encrypt55():
     key = txt2.get("1.0", 'end-1c')  # Gets everything from the inputted text
     for widget in window.winfo_children():
         widget.destroy()
+    encrypt11()
+    temp2 = message
     encrypt22()
     temp2 = message
     encrypt33()
@@ -725,6 +723,8 @@ def decrypt55():
     decrypt33()
     temp2 = message
     decrypt22()
+    temp2 = message
+    decrypt11()
 
     txt2 = Text(window, height=8, wrap=WORD)
     txt2.insert(1.0, message)
@@ -781,6 +781,8 @@ def encrypt66():
     for widget in window.winfo_children():
         widget.destroy()
     for i in range(lvl6times):
+        encrypt11()
+        temp2 = message
         encrypt22()
         temp2 = message
         encrypt33()
@@ -846,6 +848,8 @@ def decrypt66():
         temp2 = message
         decrypt22()
         temp2 = message
+        decrypt11()
+        temp2 = message
 
     txt2 = Text(window, height=8, wrap=WORD)
     txt2.insert(1.0, message)
@@ -855,7 +859,6 @@ def decrypt66():
     lbl5.pack(side=TOP)
     txt2.pack()
     btn7.pack(side=BOTTOM)
-    txt2.configure(bg=window.cget('bg'), relief=FLAT)
     txt2.configure(state="disabled")
 
 
