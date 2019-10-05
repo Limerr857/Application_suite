@@ -3,14 +3,14 @@ from tkinter.ttk import *
 import random
 import time
 
-alphabet = """abcdefghijklmnopqrstuvwxyzåäöABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ .,/_-+=():'*?!1234567890&$€#@^~;
+alphabet = """abcdefghijklmnopqrstuvwxyzåäöABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ .,/_-+=():'*?!1234567890&$€#@%}{^~;
 	"""  # Used for first level of encryption
 alen = str.__len__(
     alphabet
 )  # Gets the length of this ^, used for easy adding of new characters
 global notalphabet
 notalphabet = """p?,V0gY#hx
-!BQ G:vjd;	2kMC6OKÅ1Ö=LS*scUw8nEio^7zl9€&IauJH4rW_m.~ZAtDR$båF5äN+y@X/-(PfTe)ö3Äq'"""  # Used for second, third and fourth level of encryption, shuffled
+!BQ G:vjd;	}2kMC6OKÅ1Ö=LS*scUw8nEio^7zl9€&IauJH4rW%_m.~ZAtDR$båF5äN+{y@X/-(PfTe)ö3Äq'"""  # Used for second, third and fourth level of encryption, shuffled
 textheight = 8
 lvl3bg = 50
 lvl3sm = 20
