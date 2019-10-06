@@ -788,7 +788,6 @@ def encrypt66():
     f = open("keys/key.txt", "r")
     key = f.read()
     f.close()
-    #key = txt2.get("1.0",'end-1c')  # Gets everything from the inputted text
     for widget in window.winfo_children():
         widget.destroy()
     for i in range(lvl6times):
@@ -849,7 +848,6 @@ def decrypt66():
     f = open("keys/key.txt", "r")
     key = f.read()
     f.close()
-    #key = txt2.get("1.0",'end-1c')  # Gets everything from the inputted text
     for widget in window.winfo_children():
         widget.destroy()
     for i in range(lvl6times):
