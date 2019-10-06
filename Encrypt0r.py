@@ -351,7 +351,7 @@ def encrypt33():
         #
         message[x] = i
         x += 1
-    message = '    '.join(str(e) for e in message)
+    message = ' '.join(str(e) for e in message)
     if lvl5_active == False:
         txt2 = Text(window, height=8, wrap=WORD)
         txt2.insert(1.0, message)
@@ -400,8 +400,7 @@ def decrypt33():
     global key
     if lvl5_active == False:
         global txt2
-        key = txt2.get("1.0",
-                       'end-1c')  # Gets everything from the inputted text
+        key = txt2.get("1.0", 'end-1c')  # Gets everything from the inputted text
         for widget in window.winfo_children():
             widget.destroy()
     try:
@@ -801,13 +800,13 @@ def encrypt66():
         temp2 = message
         encrypt44()
         temp2 = message
-    file = open("Encrypt0r_InOut.txt", "w")
+    file = open("Encrypt0r_Out.txt", "w")
     file.truncate(0)
     file.write(message)
     file.close()
     lbl5 = Label(
         window,
-        text="Your encrypted message should now be in Encrypt0r_InOut.txt.")
+        text="Your encrypted message should now be in Encrypt0r_Out.txt.")
     btn7 = Button(window, text="Restart Encrypt0r", command=strt)
     lbl5.grid(row=1)
     btn7.grid(row=3)
@@ -818,7 +817,7 @@ def decrypt6():  # Sixth most insecure, uses every lower level of encryption com
         widget.destroy()
     btn4 = Button(window, text="Decrypt", command=decrypt61)
     lbl2 = Label(window,
-        text='Make sure your message is inside Encrypt0r_InOut.txt and press "Decrypt"'
+        text='Make sure your message is inside Encrypt0r_Out.txt and press "Decrypt"'
     )
     lbl2.pack(side=TOP)
     btn4.pack(side=BOTTOM)
@@ -827,7 +826,7 @@ def decrypt6():  # Sixth most insecure, uses every lower level of encryption com
 def decrypt61():
     global txt2
     global temp2
-    file = open("Encrypt0r_InOut.txt", "r")
+    file = open("Encrypt0r_Out.txt", "r")
     temp2 = file.read()
     file.close()
     for widget in window.winfo_children():
@@ -865,7 +864,7 @@ def decrypt66():
 
     txt2 = Text(window, height=8, wrap=WORD)
     txt2.insert(1.0, message)
-    open('Encrypt0r_InOut.txt', 'w').close()
+    open('Encrypt0r_Out.txt', 'w').close()
     lbl5 = Label(window, text="Here is your decrypted message:")
     btn7 = Button(window, text="Restart Encrypt0r", command=strt)
     lbl5.pack(side=TOP)
