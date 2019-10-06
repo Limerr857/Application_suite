@@ -125,7 +125,7 @@ def encrypt11():  # Multiple def's used because of lazyness
         txt1.configure(state="disabled")
 
 
-def decrypt1():  # Easiest form of decrypting, uses something very similar to the ceasar chipher
+def decrypt1():
     for widget in window.winfo_children():
         widget.destroy()
     global txt2
@@ -231,7 +231,7 @@ def encrypt22():
         txt1.configure(state="disabled")
 
 
-def decrypt2():  # Second to easiest form of decryption, same as level 1 but with shuffled letters and symbols
+def decrypt2():
     for widget in window.winfo_children():
         widget.destroy()
     global txt2
@@ -285,7 +285,7 @@ def decrypt22():
 
 
 # Level 3
-def encrypt3():  # Third most insecure, this time a key is also used, wich eliminates looking through the code to find the letters.
+def encrypt3():  # Third least insecure, this time a key is also used, wich eliminates looking through the code to find the letters.
     for widget in window.winfo_children():
         widget.destroy()
     global txt2
@@ -441,7 +441,7 @@ def decrypt33():
 
 
 # Level 4
-def encrypt4():  # Fourth most insecure, this time a key is used to generate a random sequence to raise the numbers by.
+def encrypt4():  # Fourth least insecure, this time a key is used to generate a random sequence to raise the numbers by.
     for widget in window.winfo_children():
         widget.destroy()
     global txt2
@@ -534,7 +534,7 @@ def encrypt44():
         btn7.grid(row=3)
 
 
-def decrypt4():  # Fourth most insecure, this time a key is used to generate a random sequence to raise the numbers by.
+def decrypt4():
     for widget in window.winfo_children():
         widget.destroy()
     global txt2
@@ -626,7 +626,7 @@ def decrypt44():
         txt2.configure(state="disabled")
 
 
-def encrypt5():  # Fifth most insecure, uses every lower level of encryption combined.
+def encrypt5():  # Fifth least insecure, uses every lower level of encryption combined.
     for widget in window.winfo_children():
         widget.destroy()
     global txt2
@@ -689,7 +689,7 @@ def encrypt55():
     btn7.grid(row=3)
 
 
-def decrypt5():  # Fifth most insecure, uses every lower level of encryption combined.
+def decrypt5():
     for widget in window.winfo_children():
         widget.destroy()
     global txt2
@@ -748,7 +748,7 @@ def decrypt55():
     txt2.configure(state="disabled")
 
 
-def encrypt6():  # Sixth most insecure, uses every lower level of encryption combined twice.
+def encrypt6():  # Sixth least insecure, uses every lower level of encryption combined twice.
     for widget in window.winfo_children():
         widget.destroy()
     global txt2
@@ -811,7 +811,7 @@ def encrypt66():
     btn7.grid(row=3)
 
 
-def decrypt6():  # Sixth most insecure, uses every lower level of encryption combined twice.
+def decrypt6():
     for widget in window.winfo_children():
         widget.destroy()
     btn4 = Button(window, text="Decrypt", command=decrypt61)
