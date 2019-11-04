@@ -1,16 +1,18 @@
+# coding=utf8
+
 from tkinter import *
 from tkinter.ttk import *
 import random
 import time
 
-alphabet = """abcdefghijklmnopqrstuvwxyzåäöABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ .,/_-+=():'*?!1234567890&$€#@%}{^~;
-	"""  # Used for first level of encryption
+alphabet = """abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ .,/_-+=():'*?!1234567890&$€#@%}{^~;
+	¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕ×ØÙÚÛÜÝÞßàáâãæçèéêëìíîïðñòóôõ÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſƀƁƂƃƄƅƆƇƈƉƊƋƌƍƎƏƐƑƒƓƔƕƖƗƘƙƚƛƜƝƞƟƠơƢƣƤƥƦƧƨƩƪƫƬƭƮƯưƱƲƳƴƵƶƷƸƹƺƻƼƽƾƿǀǁǂǃǄǅǆǇǈǉǊǋǌǍǎǏǐǑǒǓǔǕǖǗǘǙǚǛǜǝǞǟǠǡǢǣǤǥǦǧǨǩǪǫǬǭǮǯǰǱǲǳǴǵǶǷǸǹǺǻǼǽǾǿȀȁȂȃȄȅȆȇȈȉȊȋȌȍȎȏȐȑȒȓȔȕȖȗȘșȚțȜȝȞȟȠȡȢȣȤȥȦȧȨȩȪȫȬȭȮȯȰȱȲȳȴȵȶȷȸȹȺȻȼȽȾȿɀɁɂɃɄɅɆɇɈɉɊɋɌɍɎɏɐɑɒɓɔɕɖɗɘəɚɛɜɝɞɟɠɡɢɣɤɥɦɧɨɩɪɫɬɭɮɯɰɱɲɳɴɵɶɷɸɹɺɻɼɽɾɿʀʁʂʃʄʅʆʇʈʉʊʋʌʍʎʏʐʑʒʓʔʕʖʗʘʙʚʛʜʝʞʟʠʡʢʣʤʥʦʧʨʩʪʫʬʭʮʯ"""  # Used for first level of encryption
 alen = str.__len__(
     alphabet
 )  # Gets the length of this ^, used for easy adding of new characters
 global notalphabet
-notalphabet = """p?,V0gY#hx
-!BQ G:vjd;	}2kMC6OKÅ1Ö=LS*scUw8nEio^7zl9€&IauJH4rW%_m.~ZAtDR$båF5äN+{y@X/-(PfTe)ö3Äq'"""  # Used for second, third and fourth level of encryption, shuffled
+notalphabet = """ǞíĈƜõjğŵǐʠʋƭ³ŀũƞŘǸȋńØǶĥɽřȮƁŨdñŤaȻĮƺǗMɭǉǈʧʆ®ɀ¢Şǰȷǆʣſǻĕ¯ċDŰɸŝËìŌȔIŉƗĿɘʩȺʭƒmʕQɵʪWǩƿßĐ2ļ²ɦɊȗǖ.ƨʙƇÎȐƄʉġȨİʑªĬʀʫǢʢɎɾʚĔŋʊƛĚĘŴɡʂĭǟʛƫȽw¬ÀǅiʞʃʝűǤʤůǄɞȢ5:Ȃ´ǴÐoƘ#ȲǯȖŢȯŭȞAƴ7ǚĊķàɃɬ1Ǭ,ȪŒu»ïîĪƥBȵɿɂɈɗƈȼʨȇĩɌąǜVcbď&żZĳęÏŠÜěÍEŻǽĤƊƯŮzŅkɣʇgƅŔhɨÉȫʦŎƮǇþƉīəǭûɺ£«(ƤțǥOÔâPǝĝǪĂRȍȾɰáȀȱşŐÆǊƽŷǑɜǵðĢǣɱĻȝǀħƠƌȴĹƕņǲ3ƍūƧɑǘ=ƑǓʏŗŬȣ)ɻƔ8^ǂȰŸȒ¨ǋ¥ŕȜʎùʔœįɹƙɷƃɮť× ĞƦʜʍ·Ãšɖɤ;Óɏĉòɢơȶ¸ţ{ɫǎň¤ȊȧģÂÚʈŜ¶~	/ʯrɯʒĠǕȄĦǨŊÛșFȕlǷʖĀʄʓđçƓJÈ_ɧśɇƂvȃXŖÊÕƩ½ȤƲėʘæƼŶǃ÷ƳÝL0ǫ
+ŃƏ±%ǦĨŦɔÞ©ɓɟƟų¡ƚŇÙɛƎȸqĲy€Ȭƻ@ƾȌľȎtʬ+ɉÇɅȈƖǍưŪɶȘ}ŹeŚÁȩǁ!ǡʗǮǛȑɥãāʮĶēȡpƶNɚčȹȁüʌćxȉ­ʐƪǳý*ŁƀŲɴ¼óɁƝȳɳêɐžɕʡɍō4°ǠĜȓú¿ƷʅɩǾǌʥÌsSƱµȭɒº¹ȚÒé¾ȆČȦôǱȠƣőźŏøTŽǧè9ȟ$ŧɝȅĎɆȿıł'ǏʟĄɪăʁɄKfɼǼÿCƸǒƬë-ĸnĺƵɋĒ¦ƹɠǹĵ?GȏƐUĖǙǔĴÑǺȥ6ĆƋƢɲYǿHĽ§Ɔ"""  # Used for second, third and fourth level of encryption, shuffled
 textheight = 8
 lvl3bg = 50
 lvl3sm = 20
